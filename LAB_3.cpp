@@ -3,7 +3,7 @@
 #include <omp.h>
 #include <chrono>
 using namespace std;
-#define NUM_THREADS 5
+#define NUM_THREADS 4
 
 double** generate_A_matrix(int N) {
 	srand(time(0));
@@ -34,7 +34,7 @@ double** generate_A_matrix(int N) {
 			}
 		}
 
-		A[i][i] = sum + rand() % 100;
+		A[i][i] = sign * (sum + rand() % 10);
 	}
 
 	return A;
